@@ -1,0 +1,12 @@
+{
+  "name": "test-framework-comparison",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test:cypress": "npm --prefix ./cypress-tests run test",
+    "test:wdio": "npm --prefix ./webdriverio-tests run test",
+    "test:playwright": "npm --prefix ./playwright-tests run test",
+    "test:all": "npm run test:cypress && npm run test:wdio && npm run test:playwright",
+    "install:all": "npm --prefix ./cypress-tests install && npm --prefix ./webdriverio-tests install && npm --prefix ./playwright-tests install"
+  }
+}
