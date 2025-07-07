@@ -11,5 +11,8 @@
       "@wdio/mocha-framework"
     ]
   },
-  "include": ["./src/spec/**/*.js"]
+  "include": [
+    "./src/spec/**/*.js",
+    "./wdio.conf.js"
+  ]
 }
