@@ -1,2 +1,8 @@
 **/node_modules/
 cypress-tests/cypress/downloads/
+
+# Playwright
+playwright-tests/test-results/
+playwright-tests/playwright-report/
+playwright-tests/blob-report/
+playwright-tests/playwright/.cache/
