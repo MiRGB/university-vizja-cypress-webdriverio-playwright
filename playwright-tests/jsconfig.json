@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "checkJs": true,
+    "allowJs": true,
+    "moduleResolution": "Node",
+    "types": ["@playwright/test", "node"]
+  },
+  "include": ["**/*.js"]
+}
