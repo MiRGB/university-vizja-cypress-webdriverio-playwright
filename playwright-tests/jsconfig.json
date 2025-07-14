@@ -5,7 +5,10 @@
     "checkJs": true,
     "allowJs": true,
     "moduleResolution": "Node",
-    "types": ["@playwright/test", "node"]
+    "esModuleInterop": true,
+    "types": ["@playwright/test", "node"],
+    "baseUrl": ".", 
+    "resolveJsonModule": true
   },
   "include": ["**/*.js"]
 }
