@@ -180,12 +180,6 @@ This project is intended for:
 
 ---
 
-## 🧑‍💻 Author
-
-Created by MiRGB
-
----
-
 ## 📄 License
 
 ⚠️ This project is not open source. All rights reserved.  
