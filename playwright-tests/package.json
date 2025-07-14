@@ -5,7 +5,8 @@
   "scripts": {
     "test": "playwright test --headed",
     "test:ci": "playwright test",
-    "ui": "playwright test --ui"
+    "ui": "playwright test --ui",
+    "report:show": "playwright show-report"
   },
   "keywords": [],
   "author": "",

@@ -3,10 +3,24 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "install:all": "npm --prefix ./cypress-tests install && npm --prefix ./webdriverio-tests install && npm --prefix ./playwright-tests install",
+
     "test:cypress": "npm --prefix ./cypress-tests run test",
-    "test:wdio": "npm --prefix ./webdriverio-tests run test",
+    "report:cypress:merge": "npm --prefix ./cypress-tests run report:merge",
+    "report:cypress:generate": "npm --prefix ./cypress-tests run report:generate",
+    "report:cypress": "npm run test:cypress && npm run report:cypress:merge && npm run report:cypress:generate",
+
     "test:playwright": "npm --prefix ./playwright-tests run test",
+    "test:playwright:ci": "npm --prefix ./playwright-tests run test:ci",
+    "test:playwright:ui": "npm --prefix ./playwright-tests run ui",
+    "report:playwright": "npx playwright show-report",
+
+    "test:wdio": "npm --prefix ./webdriverio-tests run test",
+    "report:wdio:generate": "npm --prefix ./webdriverio-tests run allure:generate",
+    "report:wdio:open": "npm --prefix ./webdriverio-tests run allure:open",
+    "report:wdio": "npm run test:wdio && npm run report:wdio:generate",
+
     "test:all": "npm run test:cypress && npm run test:wdio && npm run test:playwright",
-    "install:all": "npm --prefix ./cypress-tests install && npm --prefix ./webdriverio-tests install && npm --prefix ./playwright-tests install"
+    "report:all": "npm run report:cypress && npm run report:wdio && npm run report:playwright"
   }
 }

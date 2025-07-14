@@ -1,8 +1,18 @@
 **/node_modules/
+
+# Cypress
 cypress-tests/cypress/downloads/
+cypress-tests/cypress/reports/
+cypress-tests/cypress/screenshots/
+cypress-tests/cypress/videos/
 
 # Playwright
 playwright-tests/test-results/
 playwright-tests/playwright-report/
 playwright-tests/blob-report/
 playwright-tests/playwright/.cache/
+
+# WebdriverIO
+webdriverio-tests/allure-report/
+webdriverio-tests/allure-results/
+webdriverio-tests/downloads/
