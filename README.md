@@ -9,7 +9,7 @@ This project compares three widely used JavaScript-based end-to-end (E2E) test a
 Each framework is configured to test the same target website: `https://vizja.pl/en/`  
 The goal is to evaluate their ease of use, performance, configuration options, and reporting capabilities.
 
-🌐 **View Live Project:**
+🌐 **View Live Project:**  
 🔗 [https://mirgb.github.io/vizja-university-cypress-webdriverio-playwright/](https://mirgb.github.io/vizja-university-cypress-webdriverio-playwright/)
 
 ---
@@ -38,76 +38,84 @@ This will install packages in all three subdirectories: `cypress-tests`, `playwr
 
 ## ▶️ Running Tests
 
-You can run each framework independently or run all tests sequentially from the root project.
+You can run tests for each framework independently or all together from the root directory.
 
-To run Cypress tests:
+- Run Cypress tests:  
+  `npm run test:cypress`
 
-`npm run test:cypress`
+- Run Playwright tests (headed mode):  
+  `npm run test:playwright`
 
-To run Playwright tests (headed mode):
+- Run Playwright tests in CI mode (headless):  
+  `npm --prefix ./playwright-tests run test:ci`
 
-`npm run test:playwright`
+- Open Playwright test UI:  
+  `npm --prefix ./playwright-tests run ui`
 
-To run Playwright tests in CI mode (headless):
+- Run WebdriverIO tests:  
+  `npm run test:wdio`
 
-`npm run test:playwright:ci`
-
-To open Playwright test UI:
-
-`npm run test:playwright:ui`
-
-To run WebdriverIO tests:
-
-`npm run test:wdio`
-
-To run all tests one after another:
-
-`npm run test:all`
+- Run all tests sequentially:  
+  `npm run test:all`
 
 ---
 
-## 📊 Generating Test Reports
+## 📊 Generating and Collecting Test Reports
 
-Each framework supports generating readable HTML test reports.
+Each framework produces HTML reports, which you can generate and gather into the main `docs` folder:
 
-**Cypress (Mochawesome)**  
-- To merge reports (if needed):  
-  `npm run report:cypress:merge`  
-- To generate the report:  
-  `npm run report:cypress:generate`  
-- To run both steps together:  
-  `npm run report:cypress`  
+### Cypress (Mochawesome)  
+To generate the Cypress report, simply run:  
+`npm run report:cypress`
 
-Report will be available at:  
-`cypress-tests/cypress/reports/mochawesome/html/report.html`
+The raw report is generated inside:  
+`cypress-tests/cypress/reports/mochawesome/html/`
 
----
+### Playwright (Built-in HTML reporter)  
+After running Playwright tests, open the report with:  
+`npm run report:playwright`
 
-**Playwright (built-in HTML reporter)**  
-- To open the report after running tests:  
-  `npm run report:playwright`  
-
-Report is located at:  
+Report location:  
 `playwright-tests/playwright-report/`
 
----
+### WebdriverIO (Allure)  
+Generate the Allure report:  
+`npm run report:wdio`
 
-**WebdriverIO (Allure)**  
-- To generate the Allure report:  
-  `npm run report:wdio:generate`  
-- To open the generated report:  
-  `npm run report:wdio:open`  
-- To run tests and generate the report in one step:  
-  `npm run report:wdio`  
-
-Report will be available at:  
-`webdriverio-tests/allure-report/index.html`
+Report location:  
+`webdriverio-tests/allure-report/`
 
 ---
 
-**All Reports at Once**  
-To run tests and generate reports for all frameworks:  
-`npm run report:all`
+### Collect all reports into a single `docs` folder
+
+To clean previous docs and copy fresh reports from all frameworks into the root `docs` directory, run:
+
+`npm run build:reports`
+
+After this, your reports will be available in:
+
+docs/  
+├── cypress/  
+├── webdriverio/  
+└── playwright/
+
+You can open these reports via your browser by opening their respective `index.html` files.
+
+---
+
+## ⚙️ Summary of npm scripts in root `package.json`
+
+- `npm run install:all` — install dependencies for all test projects  
+- `npm run test:cypress` — run Cypress tests  
+- `npm run report:cypress` — run Cypress tests + generate Mochawesome report  
+- `npm run test:playwright` — run Playwright tests (headed)  
+- `npm run report:playwright` — open Playwright HTML report  
+- `npm run test:wdio` — run WebdriverIO tests  
+- `npm run report:wdio` — generate Allure report  
+- `npm run test:all` — run all tests sequentially  
+- `npm run report:all` — generate reports for all frameworks  
+- `npm run build:reports` — clean and copy all reports into `docs/`  
 
 ---
 
@@ -156,8 +164,8 @@ Test files are located in:
 
 For more details, refer to the official documentation of each framework:
 
-- [Cypress Documentation](https://docs.cypress.io)
-- [Playwright Documentation](https://playwright.dev/docs/intro)
+- [Cypress Documentation](https://docs.cypress.io)  
+- [Playwright Documentation](https://playwright.dev/docs/intro)  
 - [WebdriverIO Documentation](https://webdriver.io/docs/gettingstarted/)
 
 ---
