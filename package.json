@@ -6,21 +6,21 @@
     "install:all": "npm --prefix ./cypress-tests install && npm --prefix ./webdriverio-tests install && npm --prefix ./playwright-tests install",
 
     "test:cypress": "npm --prefix ./cypress-tests run test",
-    "report:cypress:merge": "npm --prefix ./cypress-tests run report:merge",
-    "report:cypress:generate": "npm --prefix ./cypress-tests run report:generate",
-    "report:cypress": "npm run test:cypress && npm run report:cypress:merge && npm run report:cypress:generate",
+    "report:cypress": "npm --prefix ./cypress-tests run report",
 
     "test:playwright": "npm --prefix ./playwright-tests run test",
-    "test:playwright:ci": "npm --prefix ./playwright-tests run test:ci",
-    "test:playwright:ui": "npm --prefix ./playwright-tests run ui",
-    "report:playwright": "npx playwright show-report",
+    "report:playwright": "npm --prefix ./playwright-tests run report:show",
 
     "test:wdio": "npm --prefix ./webdriverio-tests run test",
-    "report:wdio:generate": "npm --prefix ./webdriverio-tests run allure:generate",
-    "report:wdio:open": "npm --prefix ./webdriverio-tests run allure:open",
-    "report:wdio": "npm run test:wdio && npm run report:wdio:generate",
+    "report:wdio": "npm --prefix ./webdriverio-tests run allure:generate",
 
     "test:all": "npm run test:cypress && npm run test:wdio && npm run test:playwright",
-    "report:all": "npm run report:cypress && npm run report:wdio && npm run report:playwright"
+    "report:all": "npm run report:cypress && npm run report:wdio && npm run report:playwright",
+
+    "build:reports": "rm -rf docs && mkdir -p docs && npm run copy:cypress && npm run copy:wdio && npm run copy:playwright",
+
+    "copy:cypress": "mkdir -p docs/cypress && cp -r ./cypress-tests/cypress/reports/mochawesome/html/* docs/cypress/",
+    "copy:wdio": "mkdir -p docs/webdriverio && cp -r ./webdriverio-tests/allure-report/* docs/webdriverio/",
+    "copy:playwright": "mkdir -p docs/playwright && cp -r ./playwright-tests/playwright-report/* docs/playwright/"
   }
 }
