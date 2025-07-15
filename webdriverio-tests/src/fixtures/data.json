@@ -1,0 +1,11 @@
+{
+  "url": "https://vizja.pl/en/",
+  "urlFragment": "vizja",
+  "name": "Joe",
+  "lastName": "Doe",
+  "studiesType": "postgraduate",
+  "birthDay": "12",
+  "birthMonth": "12",
+  "birthYear": "1999",
+  "birthDate": "1999-12-12"
+}
