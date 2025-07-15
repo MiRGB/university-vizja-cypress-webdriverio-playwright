@@ -9,6 +9,9 @@ This project compares three widely used JavaScript-based end-to-end (E2E) test a
 Each framework is configured to test the same target website: `https://vizja.pl/en/`  
 The goal is to evaluate their ease of use, performance, configuration options, and reporting capabilities.
 
+🌐 **View Live Project:**
+🔗 [https://mirgb.github.io/vizja-university-cypress-webdriverio-playwright/](https://mirgb.github.io/vizja-university-cypress-webdriverio-playwright/)
+
 ---
 
 ## 📁 Project Structure
