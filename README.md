@@ -10,7 +10,7 @@ Each framework is configured to test the same target website: `https://vizja.pl/
 The goal is to evaluate their ease of use, performance, configuration options, and reporting capabilities.
 
 🌐 **View Live Project:**  
-🔗 [https://mirgb.github.io/vizja-university-cypress-webdriverio-playwright/](https://mirgb.github.io/vizja-university-cypress-webdriverio-playwright/)
+🔗 [https://mirgb.github.io/university-vizja-cypress-webdriverio-playwright/](https://mirgb.github.io/university-vizja-cypress-webdriverio-playwright/)
 
 ---
 
